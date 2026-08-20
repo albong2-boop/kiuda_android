@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">키:우다</string>
+    <string name="login_subtitle">함께 하는 초록빛 일상을 시작하세요</string>
+    <string name="dashboard_subtitle">오늘도 초록빛 하루를 함께해요</string>
+</resources>

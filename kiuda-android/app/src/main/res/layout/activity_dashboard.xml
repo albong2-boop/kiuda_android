@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Homepage neo concept: soft green bg, raised cards, leaf accents -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/neo_bg">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/neo_bg"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/neo_bg"
+            app:titleTextColor="@color/neo_text_dark"
+            app:title="키:우다"
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Greeting -->
+                <TextView
+                    android:id="@+id/tvGreeting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="안녕하세요"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/neo_text_dark"
+                    android:fontFamily="sans-serif-black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="오늘도 초록빛 하루를 함께해요"
+                    android:textSize="13sp"
+                    android:textColor="@color/neo_muted" />
+
+                <!-- 내 키움이 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="🌱  내 키움이"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/neo_text_dark" />
+
+                <LinearLayout
+                    android:id="@+id/containerPlants"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:padding="16dp"
+                    android:background="@drawable/bg_neo_card"
+                    android:minHeight="56dp" />
+
+                <TextView
+                    android:id="@+id/tvNoPlants"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="등록된 작물이 없습니다."
+                    android:visibility="gone"
+                    android:textColor="@color/neo_muted" />
+
+                <!-- 체크리스트 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="✅  오늘 할 일"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/neo_text_dark" />
+
+                <LinearLayout
+                    android:id="@+id/containerChecklist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:padding="16dp"
+                    android:background="@drawable/bg_neo_card"
+                    android:minHeight="56dp" />
+
+                <!-- 날씨 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="☀  날씨"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/neo_text_dark" />
+
+                <TextView
+                    android:id="@+id/tvWeather"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="18dp"
+                    android:background="@drawable/bg_neo_card"
+                    android:text="정보 없음"
+                    android:textSize="16sp"
+                    android:textColor="@color/neo_text" />
+
+                <!-- 병해충 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="⚠  병해충 주의보"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/neo_text_dark" />
+
+                <LinearLayout
+                    android:id="@+id/containerPest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:padding="16dp"
+                    android:background="@drawable/bg_neo_card"
+                    android:minHeight="48dp" />
+
+                <!-- 묻다 CTA -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAsk"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_marginTop="32dp"
+                    android:text="🤖  묻다 · AI 사진 진단"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="14dp"
+                    android:backgroundTint="@color/neo_green_primary"
+                    android:elevation="6dp" />
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:indeterminateTint="@color/neo_green_primary"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
