@@ -151,8 +151,41 @@
                     android:minHeight="48dp" />
 
                 <!-- 묻다 CTA -->
+                
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnAsk"
+                    android:id="@+id/btnPestAlerts"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="주의보"
+                    android:textSize="13sp"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/neo_green_primary"
+                    android:textColor="@color/neo_green_dark" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEncyclopedia"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="병해충 도감"
+                    android:textSize="13sp"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/neo_green_primary"
+                    android:textColor="@color/neo_green_dark" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAsk"
                     android:layout_width="match_parent"
                     android:layout_height="58dp"
                     android:layout_marginTop="32dp"

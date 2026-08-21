@@ -12,7 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/neo_bg"
         app:titleTextColor="@color/neo_text_dark"
-        app:title="묻다 · AI 진단"
+        app:title="묻다 · 온새미"
         app:navigationIconTint="@color/neo_text_dark" />
 
     <ScrollView
@@ -28,10 +28,9 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Camera preview in soft card -->
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="280dp"
+                android:layout_height="260dp"
                 android:background="@drawable/bg_neo_card"
                 android:padding="4dp">
 
@@ -54,22 +53,35 @@
 
             <TextView
                 android:id="@+id/tvStatus"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="작물 잎을 화면 중앙에 맞춰 촬영하세요."
+                android:text="작물 잎을 화면 중앙에 맞춰 촬영해 주세요."
                 android:textSize="13sp"
-                android:textColor="@color/neo_muted" />
+                android:textColor="@color/neo_muted"
+                android:lineSpacingExtra="2dp" />
 
-            <!-- 증상 선택 -->
+            <!-- 사진 분석 후 예측 질문 -->
             <TextView
+                android:id="@+id/tvPredictTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:text="증상 선택"
+                android:layout_marginTop="24dp"
+                android:text="온새미가 사진으로 짐작한 질문"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="@color/neo_text_dark" />
+                android:textColor="@color/neo_text_dark"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvPredictHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="해당되는 항목을 골라 주세요. 여러 개 선택 가능해요."
+                android:textSize="12sp"
+                android:textColor="@color/neo_muted"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:id="@+id/containerSymptoms"
@@ -77,20 +89,60 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="10dp"
-                android:padding="16dp"
+                android:padding="14dp"
                 android:background="@drawable/bg_neo_card"
-                android:minHeight="56dp" />
+                android:minHeight="48dp"
+                android:visibility="gone" />
+
+            <!-- 직접 입력 -->
+            <TextView
+                android:id="@+id/tvCustomLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="직접 물어보기"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/neo_text_dark"
+                android:visibility="gone" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCustomQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxStrokeColor="@color/neo_green_primary"
+                app:hintEnabled="false"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCustomQuestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="예: 잎 끝이 마르는데 물 부족일까요?"
+                    android:inputType="textMultiLine"
+                    android:minLines="2"
+                    android:maxLines="4"
+                    android:textSize="14sp"
+                    android:padding="14dp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnDiagnose"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:layout_marginTop="24dp"
-                android:text="🔍  AI 진단 요청"
+                android:layout_marginTop="22dp"
+                android:text="🌿  AI 온새미 진단"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:cornerRadius="14dp"
-                android:backgroundTint="@color/neo_green_dark" />
+                android:backgroundTint="@color/neo_green_dark"
+                android:enabled="false" />
 
             <ProgressBar
                 android:id="@+id/progress"

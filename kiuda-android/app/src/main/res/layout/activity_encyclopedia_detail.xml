@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/neo_bg">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/neo_bg"
+        app:title="도감 상세"
+        app:titleTextColor="@color/neo_text_dark"
+        app:navigationIconTint="@color/neo_text_dark" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvMeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/neo_muted" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/neo_text_dark" />
+
+            <TextView
+                android:id="@+id/tvScientific"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="13sp"
+                android:textColor="@color/neo_muted"
+                android:textStyle="italic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="증상"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/neo_text_dark" />
+
+            <TextView
+                android:id="@+id/tvSymptoms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="14dp"
+                android:background="@drawable/bg_neo_card"
+                android:textSize="14sp"
+                android:textColor="@color/neo_text"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="발생 환경"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/neo_text_dark" />
+
+            <TextView
+                android:id="@+id/tvEnv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="14dp"
+                android:background="@drawable/bg_neo_card"
+                android:textSize="14sp"
+                android:textColor="@color/neo_text"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="방제 · 관리"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/neo_text_dark" />
+
+            <LinearLayout
+                android:id="@+id/containerControl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="14dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_neo_card" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="예방"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/neo_text_dark" />
+
+            <TextView
+                android:id="@+id/tvPrevention"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="14dp"
+                android:background="@drawable/bg_neo_card"
+                android:textSize="14sp"
+                android:textColor="@color/neo_text"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="※ 참고용 정보입니다. 약제 사용은 안전사용기준을 지키세요. 출처: NCPMS"
+                android:textSize="11sp"
+                android:textColor="@color/neo_muted" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -15,6 +15,8 @@ import androidx.lifecycle.lifecycleScope
 import com.kiuda.app.R
 import com.kiuda.app.databinding.ActivityDashboardBinding
 import com.kiuda.app.ui.ask.AskActivity
+import com.kiuda.app.ui.ncpms.EncyclopediaListActivity
+import com.kiuda.app.ui.ncpms.PestAlertsActivity
 import com.kiuda.app.ui.login.LoginActivity
 import kotlinx.coroutines.launch
 
@@ -36,6 +38,12 @@ class DashboardActivity : AppCompatActivity() {
 
         binding.btnAsk.setOnClickListener {
             startActivity(Intent(this, AskActivity::class.java))
+        }
+        binding.btnPestAlerts.setOnClickListener {
+            startActivity(Intent(this, PestAlertsActivity::class.java))
+        }
+        binding.btnEncyclopedia.setOnClickListener {
+            startActivity(Intent(this, EncyclopediaListActivity::class.java))
         }
 
         binding.swipeRefresh.setColorSchemeColors(

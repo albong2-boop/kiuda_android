@@ -48,5 +48,8 @@
             android:exported="false"
             android:theme="@style/Theme.Kiuda" />
 
+            <activity android:name=".ui.ncpms.PestAlertsActivity" android:exported="false" />
+        <activity android:name=".ui.ncpms.EncyclopediaListActivity" android:exported="false" />
+        <activity android:name=".ui.ncpms.EncyclopediaDetailActivity" android:exported="false" />
     </application>
 </manifest>

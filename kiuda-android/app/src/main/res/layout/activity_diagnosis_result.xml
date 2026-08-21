@@ -12,7 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/neo_bg"
         app:titleTextColor="@color/neo_text_dark"
-        app:title="진단 결과"
+        app:title="온새미 진단"
         app:navigationIconTint="@color/neo_text_dark" />
 
     <ScrollView
@@ -24,39 +24,68 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:padding="20dp">
 
+            <!-- 온새미 인사 카드 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp"
+                android:background="@drawable/bg_neo_card">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌿  온새미"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/neo_green_dark"
+                    android:background="@drawable/bg_pill_soft"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tvGreeting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="사진을 살펴봤어요. 아래처럼 정리해 드릴게요."
+                    android:textSize="15sp"
+                    android:textColor="@color/neo_text"
+                    android:lineSpacingExtra="4dp" />
+            </LinearLayout>
+
+            <!-- 진단명 -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🔍  진단 결과"
-                android:textSize="14sp"
+                android:layout_marginTop="22dp"
+                android:text="추정 진단"
+                android:textSize="13sp"
                 android:textStyle="bold"
-                android:textColor="@color/neo_green_dark"
-                android:background="@drawable/bg_pill_soft"
-                android:paddingLeft="14dp"
-                android:paddingRight="14dp"
-                android:paddingTop="6dp"
-                android:paddingBottom="6dp" />
+                android:textColor="@color/neo_muted" />
 
             <TextView
                 android:id="@+id/tvDiagnosisName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="6dp"
                 android:text="진단명"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/neo_text_dark"
-                android:fontFamily="sans-serif-black" />
+                android:lineSpacingExtra="2dp" />
 
             <TextView
                 android:id="@+id/tvConfidence"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="10dp"
                 android:text="확신도 0%"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textColor="@color/neo_muted" />
 
             <ProgressBar
@@ -70,11 +99,12 @@
                 android:progressTint="@color/neo_green_primary"
                 android:progressBackgroundTint="@color/neo_green_soft" />
 
+            <!-- 분석 -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:text="📌  진단 이유"
+                android:layout_marginTop="24dp"
+                android:text="온새미의 분석"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="@color/neo_text_dark" />
@@ -83,18 +113,19 @@
                 android:id="@+id/tvReason"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="18dp"
+                android:layout_marginTop="8dp"
+                android:padding="16dp"
                 android:background="@drawable/bg_neo_card"
                 android:textSize="15sp"
                 android:textColor="@color/neo_text"
-                android:lineSpacingExtra="4dp" />
+                android:lineSpacingExtra="6dp" />
 
+            <!-- 해결책 -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:text="🌱  관리 방법"
+                android:layout_marginTop="24dp"
+                android:text="이렇게 해보면 좋아요"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="@color/neo_text_dark" />
@@ -104,16 +135,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:padding="18dp"
+                android:layout_marginTop="8dp"
+                android:padding="16dp"
                 android:background="@drawable/bg_neo_card" />
+
+            <TextView
+                android:id="@+id/tvClosing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="확진은 지역 농업 전문가 확인을 권해요. 궁금한 점이 있으면 언제든 다시 물어봐 주세요 🌱"
+                android:textSize="13sp"
+                android:textColor="@color/neo_muted"
+                android:lineSpacingExtra="3dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEncyclopedia"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:text="📖  공식 병해충 도감에서 보기"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                app:strokeColor="@color/neo_green_primary"
+                android:textColor="@color/neo_green_dark" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnClose"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginTop="32dp"
-                android:text="닫기"
+                android:layout_height="54dp"
+                android:layout_marginTop="24dp"
+                android:text="확인"
                 android:textStyle="bold"
                 app:cornerRadius="12dp"
                 android:backgroundTint="@color/neo_green_primary" />

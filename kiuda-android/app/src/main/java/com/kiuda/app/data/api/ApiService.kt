@@ -45,12 +45,34 @@ interface ApiService {
     @GET("symptoms")
     suspend fun getSymptomTags(): Response<List<SymptomTag>>
 
+    @POST("upload/base64")
+    suspend fun uploadBase64(@Body request: Base64UploadRequest): Response<Base64UploadResponse>
+
     @POST("upload/presigned")
     suspend fun getPresignedUrl(@Body request: PresignedUrlRequest): Response<PresignedUrlResponse>
+
+    @POST("ai/predict")
+    suspend fun predictQuestions(@Body request: PredictRequest): Response<PredictResponse>
 
     @POST("ai/diagnose")
     suspend fun requestDiagnosis(@Body request: DiagnosisRequest): Response<DiagnosisResult>
 
     @GET("ai/diagnose/{id}")
     suspend fun getDiagnosisResult(@Path("id") id: Long): Response<DiagnosisResult>
+
+    // NCPMS
+    @GET("ncpms/alerts")
+    suspend fun ncpmsAlerts(@Query("crop") crop: String? = null): Response<NcpmsAlertListResponse>
+
+    @GET("ncpms/encyclopedia")
+    suspend fun ncpmsEncyclopedia(
+        @Query("q") q: String? = null,
+        @Query("crop") crop: String? = null
+    ): Response<NcpmsEncyclopediaListResponse>
+
+    @GET("ncpms/encyclopedia/{id}")
+    suspend fun ncpmsEncyclopediaDetail(@Path("id") id: String): Response<NcpmsEncyclopediaItem>
+
+    @GET("ncpms/match")
+    suspend fun ncpmsMatch(@Query("name") name: String): Response<NcpmsMatchResponse>
 }

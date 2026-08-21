@@ -76,6 +76,16 @@ data class SymptomTag(
     val category: String? = null
 )
 
+data class Base64UploadRequest(
+    val imageBase64: String
+)
+
+data class Base64UploadResponse(
+    val fileUrl: String? = null,
+    val key: String? = null,
+    val bytes: Int? = null
+)
+
 data class PresignedUrlRequest(
     val fileName: String,
     val contentType: String = "image/jpeg"
@@ -91,7 +101,8 @@ data class DiagnosisRequest(
     val imageUrl: String,
     val symptomTagIds: List<Long> = emptyList(),
     val plantId: Long? = null,
-    val question: String? = null
+    val question: String? = null,
+    val imageBase64: String? = null
 )
 
 data class DiagnosisStep(
@@ -100,18 +111,85 @@ data class DiagnosisStep(
     val description: String? = null
 )
 
+data class PredictRequest(
+    val imageUrl: String,
+    val imageBase64: String? = null
+)
+
+data class PredictedQuestion(
+    val id: Long? = null,
+    val text: String? = null,
+    val tag: String? = null
+)
+
+data class PredictResponse(
+    val questions: List<PredictedQuestion> = emptyList(),
+    val summary: String? = null
+)
+
 data class DiagnosisResult(
     val id: Long? = null,
     val diagnosisName: String? = null,
-    val confidence: Double? = null, // 0.0 ~ 1.0 or 0~100
+    val confidence: Double? = null,
     val reason: String? = null,
     val managementMethods: List<String>? = null,
     val steps: List<DiagnosisStep>? = null,
-    val imageUrl: String? = null
+    val imageUrl: String? = null,
+    val greeting: String? = null,
+    val closing: String? = null,
+    val provider: String? = null
 )
 
 // ===== Generic =====
 data class ApiMessage(
     val message: String? = null,
     val success: Boolean? = null
+)
+
+
+// ----- NCPMS -----
+data class NcpmsAlert(
+    val id: String? = null,
+    val crop: String? = null,
+    val name: String? = null,
+    val level: String? = null,
+    val region: String? = null,
+    val period: String? = null,
+    val summary: String? = null,
+    val source: String? = null,
+    val sickKey: String? = null
+)
+
+data class NcpmsAlertListResponse(
+    val items: List<NcpmsAlert> = emptyList(),
+    val updatedAt: String? = null,
+    val source: String? = null
+)
+
+data class NcpmsEncyclopediaItem(
+    val id: String? = null,
+    val crop: String? = null,
+    val category: String? = null,
+    val name: String? = null,
+    val scientificName: String? = null,
+    val summary: String? = null,
+    val symptoms: String? = null,
+    val environment: String? = null,
+    val control: List<String>? = null,
+    val prevention: String? = null,
+    val tags: List<String>? = null,
+    val source: String? = null,
+    val sickKey: String? = null,
+    val thumbImg: String? = null
+)
+
+data class NcpmsEncyclopediaListResponse(
+    val items: List<NcpmsEncyclopediaItem> = emptyList(),
+    val total: Int? = null,
+    val source: String? = null
+)
+
+data class NcpmsMatchResponse(
+    val items: List<NcpmsEncyclopediaItem> = emptyList(),
+    val query: String? = null
 )
