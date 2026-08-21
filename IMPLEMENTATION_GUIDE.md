@@ -1,3 +1,17 @@
+실행은 server폴더에 .env 파일에
+제미나이api
+https://ncpms.rda.go.kr/ 여기api 받아와서 등록후 사용
+
+서버실행은 vscode 에서
+node server.mjs (아래 나온 방법대로 안하고 이렇게 해도됨.)
+
+실기기로 실행시
+kiuda-android\app\src\main\java\com\kiuda\app\data\api\RetrofitClient.kt
+이 파일을 pc ip로 수정후(파일열면 사용법 나옴)
+안드로이드스튜디오에서
+apk로 export 후 사용.
+
+
 # 키:우다 구현 가이드 · 미구현 기능 추천 구현법
 
 이 문서는 **지금 바로 실행 가능한 범위**와 **아직 API/제품적으로 비어 있는 부분**,  
